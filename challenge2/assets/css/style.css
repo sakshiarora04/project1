@@ -1,0 +1,235 @@
+body{
+    margin: 0;
+    background-color: #EDEDF6;
+    font-family: 'Roboto';
+    color: var(--text-secondary-color);
+}
+ul{
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+/* nav bar */
+header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: var(--header-color);
+
+}
+header .logo{
+    background-color: var(--main-color);
+    display: block;
+    padding: 5px 10px 5px 50px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-size: 40px;
+
+}
+.nav-links{
+    padding-right: 80px;
+    display: flex;
+}
+.nav-links .nav-link{
+    padding: 0 10px;
+}
+/* links positioning */
+.nav-links .nav-link a{
+    position: relative;
+    font-size: 30px;
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    text-decoration: none;
+    z-index: 0;
+}
+.nav-bar .nav-links .nav-link a::before{
+    /* makes the "underline" behind the text */
+    z-index: -1;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 35px;
+    /*color of the underline, make it transparent*/
+    background-color: var(--main-color) ;
+    opacity: 0.5;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+/* effects on hovering over links */
+@media (hover: hover) and (pointer: fine) {
+    .nav-bar .nav-links .nav-link a:hover::before{
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+
+.banner{
+    height: 300px;
+}
+/* banner image */
+.banner {
+    position: relative;
+    background-image: url("../img/laptop.jpg");
+    background-repeat: no-repeat;
+}
+.banner span{
+    background-color: var(--main-color);
+    padding: 5px 15px;
+    color: var(--text-color);
+    font-size: 40px;
+    position: absolute;
+    right: 100px;
+    bottom: 30px;
+}
+section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    padding: 40px 0;
+}
+
+section aside{
+    font-size: 40px;
+    text-align: right;
+    flex: 0 0 20%;
+    max-width: 20%;
+    font-weight: bold;
+    padding-top: 10px;
+}
+section .column-80{
+    flex: 0 0 80%;
+    max-width: 80%;
+     border-left: 4px solid var(--text-secondary-color);
+    margin: 0 0 0 20px;
+    padding-left: 40px;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 20px 0;
+
+}
+section .nav-links {
+    justify-content: center;
+}
+section .nav-links .nav-link{
+    padding: 0 25px;
+}
+section .nav-links .nav-link a{
+    color: var(--text-color);
+    border-bottom-color: var(--text-color);
+    font-size: 25px;
+}
+.work-column{
+    position: relative;
+}
+
+
+.bg-image1, .bg-image2, .bg-image3, .bg-image4, .bg-image5{
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    border: 4px solid var(--main-color);
+    background-size: cover;
+
+}
+.bg-image1{
+    background-image: url(../img/laptop.jpg);
+    }
+.bg-image2{
+background-image: url(../img/ledwall.jpeg);
+}
+.bg-image3{
+    background-image: url(../img/cal.jpeg);
+}
+.bg-image4{
+    background-image: url(../img/pp.jpeg);
+}
+.bg-image5{
+    background-image: url(../img/run.jpeg);
+}
+.height-500{
+    height: 500px;
+}
+.height-160{
+    height: 160px;
+}
+
+.pb{
+    padding-bottom: 15px;
+}
+.pr{
+    padding-right: 15px;
+}
+.hover-effect:hover{
+    opacity: 1;
+    transition: all 0.4s;
+}
+/* text position in work images */
+.work-column .title-box{
+    position: absolute;
+    bottom: 50px;
+    background-color: var(--main-color);
+    padding: 5px 15px;
+    color: var(--text-color);
+}
+
+.work-column .title-box .title{
+    font-size: 24px;
+    font-weight: bold;
+}
+.work-column .title-box .sub-title{
+    font-size: 12px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}
+
+.flex-items {
+    display: block;
+    flex:1 1 auto;
+    align-self: auto;
+    order: 0;  
+
+}
+.contact .nav-links{
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+.contact .nav-links .nav-link{
+    margin-bottom: 20px;
+}
+@media(max-width: 992px){
+    section{
+        width: 90%;
+    }
+    section p{
+        font-size: 16px;
+        text-align: justify;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* set columns to only be 50% of the width */
+    .flex-items{
+      flex: 0 0 50%;
+      max-width: 50%;  
+      
+    }
+    .title-box{
+        flex: 0 0 50%;
+        max-width: 50%;  
+        opacity: 0;
+        
+      }
+}

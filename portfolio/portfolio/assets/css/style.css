@@ -1,0 +1,196 @@
+body{
+    margin: 0;
+    background-color: #EDEDF6;
+    font-family: 'Roboto';
+    color: var(--text-secondary-color);
+}
+ul{
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: var(--header-color);
+
+}
+header .logo{
+    background-color: var(--main-color);
+    display: block;
+    padding: 5px 10px 5px 50px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-size: 40px;
+
+}
+.nav-links{
+    padding-right: 80px;
+    display: flex;
+}
+.nav-links .nav-link{
+    padding: 0 10px;
+}
+.nav-links .nav-link a{
+    position: relative;
+    font-size: 30px;
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    text-decoration: none;
+    z-index: 0;
+}
+.nav-bar .nav-links .nav-link a::before{
+    /* makes the "underline" behind the text */
+    z-index: -1;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 35px;
+    /*color of the underline, make it transparent*/
+    background-color: var(--main-color) ;
+    opacity: 0.5;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .nav-bar .nav-links .nav-link a:hover::before{
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+
+.banner{
+    height: 300px;
+}
+.banner {
+    position: relative;
+    background-image: url("../img/dummy-check.jpg");
+    background-repeat: no-repeat;
+}
+.banner span{
+    background-color: var(--main-color);
+    padding: 5px 15px;
+    color: var(--text-color);
+    font-size: 40px;
+    position: absolute;
+    right: 100px;
+    bottom: 30px;
+}
+section {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    padding: 40px 0;
+}
+section aside{
+    font-size: 40px;
+    text-align: right;
+    flex: 0 0 20%;
+    max-width: 20%;
+    font-weight: bold;
+    padding-top: 10px;
+}
+section .column-80{
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+section .border-left{
+    border-left: 4px solid var(--text-secondary-color);
+    margin: 0 0 0 20px;
+    padding-left: 40px;
+}
+section p {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 20px 0;
+
+}
+section .nav-links {
+    justify-content: center;
+}
+section .nav-links .nav-link{
+    padding: 0 25px;
+}
+section .nav-links .nav-link a{
+    color: var(--text-color);
+    border-bottom-color: var(--text-color);
+    font-size: 25px;
+}
+.work-column{
+    position: relative;
+}
+
+.work-column .bg-image{
+    background-image: url(../img/dummy-check.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    opacity: 0.5;
+
+}
+.height-500{
+    height: 500px;
+}
+.height-160{
+    height: 160px;
+}
+.green-border{
+    border: 4px solid var(--main-color);
+}
+
+.pb{
+    padding-bottom: 15px;
+}
+.pr{
+    padding-right: 15px;
+}
+.hover-effect:hover{
+    opacity: 1;
+    transition: all 0.4s;
+}
+.work-column .title-box{
+    position: absolute;
+    bottom: 50px;
+    background-color: var(--main-color);
+    padding: 5px 15px;
+    color: var(--text-color);
+}
+
+.work-column .title-box .title{
+    font-size: 24px;
+    font-weight: bold;
+}
+.work-column .title-box .sub-title{
+    font-size: 12px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}
+
+.flex-items {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+.contact .nav-links{
+    padding: 40px 0;
+}
+@media(max-width: 992px){
+    section{
+        width: 95%;
+    }
+}
